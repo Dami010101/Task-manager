@@ -2,14 +2,14 @@ import React from 'react'
 import './Task.css';
 import {MdOutlineDeleteForever,MdEditNote} from 'react-icons/md';
 
-const Task = () => {
+const Task = ({task, index, deleteTask, getSingleTask}) => {
   return (
     <div className='task'>
-    <p> 1. <b>Playin ball</b></p>
+    <p> {index+1} <b>{task.name}</b></p>
     <div className='task-icons'>
         
-        <MdEditNote />
-        <MdOutlineDeleteForever/>
+        <MdEditNote onClick={()=>getSingleTask(task)}/>
+        <MdOutlineDeleteForever onClick={()=>deleteTask(task._id)}/>
     </div>
    
 </div>
