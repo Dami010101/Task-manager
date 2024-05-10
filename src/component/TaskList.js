@@ -99,7 +99,7 @@ const TaskList = () => {
             <b>Completed Tasks:</b> 0
           </h3>
         </div>
-       {
+       {/* {
           task.map((data, index)=>(
             <Task
             key={data._id}
@@ -111,7 +111,18 @@ const TaskList = () => {
             />
 
           ))
-       }
+       } */}
+
+            {Array.isArray(task) && task.map((data, index) => (
+              <Task
+                key={data._id}
+                task={data}
+                index={index}
+                deleteTask={deleteTask}
+                updateTask={updateTask}
+                getSingleTask={getSingleTask}
+              />
+            ))}
       
        <Form 
        handleInputChange = {handleInputChange}
