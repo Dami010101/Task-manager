@@ -53,7 +53,7 @@ const TaskList = () => {
     const deleteTask = async(id)=>{
       try {
         // await axios.delete(`http://localhost:8001/create_user/${id}`) 
-        await axios.delete(`https://task-manager-o5d5.onrender.com/create_user${id}`) 
+        await axios.delete(`https://task-manager-o5d5.onrender.com/create_user/${id}`) 
         const deleteFilter = task.filter((task)=>task._id !== id)
         setTasks(deleteFilter)
         toast.success('Task Deleted')
@@ -77,7 +77,7 @@ const TaskList = () => {
     const updateTask = async()=>{
       try {
         // await axios.put(`http://localhost:8001/create_user/${taskId}`, formData) 
-        await axios.put(`https://task-manager-o5d5.onrender.com/create_user${taskId}`, formData) 
+        await axios.put(`https://task-manager-o5d5.onrender.com/create_user/${taskId}`, formData) 
         setFormData({...formData, name: ''})
         toast.success('Task Updated')
         getAllTask()
